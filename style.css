@@ -1,12 +1,82 @@
+:root{
+    --primary: #F63F09;
+    --secondary: #09F63F;
+    --font-color: #3F09F6;
+}
+
 *{
     box-sizing: border-box;
 }
+html{
+    font-family: 'Poppins', sans-serif;
+}
 
 .parent{
+    background-color: var(--primary);
+
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.info-n-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-div{
+    width: 70%;
+    height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px;
+    border: 1px solid black;
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px
+    rgba(0,0,0,0.5);
+}
+
+#updater{  /*The main updater font that shows the prompt*/
+    font-size: 6rem;
+    color: var(--font-color);
+    -webkit-text-stroke: 2px black; /* width and color */
+}
+
+#action-btn{ /*Well its an action button*/
+    background-color: var(--secondary);
+    margin: 30px;
+    color: var(--font-color);
+    
+    font-size: 4rem;
+    font-weight: 600;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 30px 10px 30px;
+
+
+    /* Shadow for the button */
+    box-shadow: 10px 10px 0px
+    rgba(0,0,0,0.5);
+    -webkit-text-stroke: 2px black; /* width and color */
+    cursor: pointer;
+}
+
+footer{
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    margin: 20px;
+}
+.desc{
+    font-size: 1rem;
+    font-weight: 500;
 }
