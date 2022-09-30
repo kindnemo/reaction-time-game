@@ -93,6 +93,14 @@ footer{
     font-weight: 500;
 }
 
+.timer{
+    font-size: 10rem;
+    color: var(--secondary);
+    -webkit-text-stroke: 1px black;
+
+    text-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 
 /* MEDIA QUERIES */
 @media(max-width: 715px){
