@@ -3,10 +3,15 @@ const updater = document.querySelector("#updater");   //This is the dialogue box
 const footer = document.querySelector(".faq");
 const infoDiv = document.querySelector(".info-n-btn");
 const playArea = document.querySelector("#click-area");
+const timerHead = document.createElement("h1");
+
+
+function gamePlay(){ //Actual functionality of the gameplay 
+    let isGreen = false;
+}
 
 
 function countdown(){  //Countdown to start the game
-    const timerHead = document.createElement("h1");
     timerHead.classList.add("timer");
     playArea.appendChild(timerHead);
     let eta = 3; //Timer value for the countdown of starting the game
@@ -15,10 +20,9 @@ function countdown(){  //Countdown to start the game
         eta-=1;
         if(eta < 0){
             clearInterval(decrementTime);
-            timerHead.style.display = "none";
+            timerHead.textContent = "Wait for Green..."
         }
     }, 1000)
-    decrementTime;
 }
 
 function startGame(){
@@ -26,6 +30,7 @@ function startGame(){
     infoDiv.style.display = "none";
 
     countdown();  //Calls the countdown function after starting the game
+
     
 }
 
@@ -51,7 +56,7 @@ function changeText(){
 function textResizer (){ //Scales the size of the text based on the window size and viewport of the browser
     let windowWidth = window.innerWidth;
     if(windowWidth < 455){
-        updater.style.fontSize = "2rem";    
+        updater.style.fontSize = "2rem";
         updater.style.cssText += "-webkit-text-stroke: 1px black; "
     }else if(windowWidth < 610){
         updater.style.fontSize = "3rem";
