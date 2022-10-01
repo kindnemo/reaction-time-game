@@ -5,9 +5,24 @@ const infoDiv = document.querySelector(".info-n-btn");
 const playArea = document.querySelector("#click-area");
 const timerHead = document.createElement("h1");
 
+let start;
+
+function countingClick(){  //Counts the time (in millisecond) in which the user clicks the screen
+    var elapsed = new Date().getTime() - start;
+    timerHead.textContent = `${elapsed}ms`;
+    
+}
 
 function gamePlay(){ //Actual functionality of the gameplay 
-    let isGreen = false;
+    let x = Math.floor((Math.random() * 15) + 1) * 1000;
+    let makeGreen = setTimeout(()=>{    //Makes the screen given at a random pace between 1 and 10 seconds
+        playArea.style.backgroundColor = "#09F63F";
+        timerHead.style.color = "#F63F09";
+        timerHead.textContent = "Click!"
+        start = new Date().getTime();  //Start of the timer for clicking the green area
+        playArea.addEventListener("click", countingClick);
+    }, x);
+    
 }
 
 
@@ -23,6 +38,8 @@ function countdown(){  //Countdown to start the game
             timerHead.textContent = "Wait for Green..."
         }
     }, 1000)
+    gamePlay();
+
 }
 
 function startGame(){
